@@ -88,6 +88,7 @@ To have more control over the size of your popup you can use one of these data a
 
 
 You can use any CSS size unit (`px`, `%`, `em`, `vw` ...) in the value of the attribute.
+
 | Dimension | Attribute | Value Format | Example |
 |-----------|-----------|--------|---------|
 | width | `data-width` | `{width}{unit}` | `data-width="500px"` |
