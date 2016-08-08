@@ -3,19 +3,19 @@ class Lifter {
 	constructor(options) {
 
 		let settings = {
-			ground : 'body',
-			triggers : '[target=_popup], [target=popup], [rel=popup], .lifter-up',
+			base : 'body',
+			triggers : '[target=_popup]',
 			preload : true
 		}
 
 		Object.assign(settings, options);
 
-		this.ground = document.querySelector(settings.ground);
-		var ground = this.ground;
+		this.base = document.querySelector(settings.base);
+		var base = this.base;
 
 		this.triggers = document.querySelectorAll(settings.triggers);
 
-		this.ground.classList.add('lifter-ground');
+		this.base.classList.add('lifter-base');
 
 		this.triggers.forEach(function(trigger) {
 			trigger.classList.add('lifter-trigger');
@@ -27,7 +27,7 @@ class Lifter {
 			lifterCommon.id = 'lifter-common';
 			lifterCommon.classList.add('lifter');
 
-			this.ground.appendChild(lifterCommon);
+			this.base.appendChild(lifterCommon);
 		}
 
 		if (settings.preload !== false) {
@@ -38,23 +38,25 @@ class Lifter {
 			}
 
 			this.preloads.forEach(function(trigger) {
-				let lifter = document.createElement('aside'),
-					frame = document.createElement('iframe');
+				if (trigger.getAttribute('data-content') === null) {
+					let lifter = document.createElement('aside'),
+						frame = document.createElement('iframe');
 
-				lifter.id = 'lifter-' + String(performance.now()).replace('.', '_');
-				lifter.classList.add('lifter');
+					lifter.id = 'lifter-' + String(performance.now()).replace('.', '_');
+					lifter.classList.add('lifter');
 
-				frame.classList.add('lifter-content');
-				frame.src = trigger.href;
+					frame.classList.add('lifter-content');
+					frame.src = trigger.href;
 
-				lifter.appendChild(frame);
-				ground.appendChild(lifter);
+					lifter.appendChild(frame);
+					base.appendChild(lifter);
 
-				trigger.setAttribute('data-lifter', '#' + lifter.id);
+					trigger.setAttribute('data-lifter', '#' + lifter.id);
+				}
 			}, this);
 		}
 
-		this.ground.addEventListener('click', function(event) {
+		this.base.addEventListener('click', function(event) {
 			if (event.target.classList.contains('lifter-trigger')) {
 				event.preventDefault();
 				let trigger = event.target,
@@ -98,22 +100,22 @@ class Lifter {
 					lifter.appendChild(frame);
 				}
 
-				ground.classList.add('lifting');
+				base.classList.add('lifting');
 				lifter.classList.add('lifted');
 			}
 		});
 
 
-		this.ground.addEventListener('click', function(event) {
+		this.base.addEventListener('click', function(event) {
 			if (event.target.classList.contains('lifting')) {
-				let lifter = ground.querySelector('.lifted');
+				let lifter = base.querySelector('.lifted');
 
 				if (lifter.id === 'lifter-common') {
 					lifter.innerHtml = '';
 				}
 
 				lifter.classList.remove('lifted');
-				ground.classList.remove('lifting');
+				base.classList.remove('lifting');
 
 				setTimeout(function() {
 					lifter.classList.remove('lifter-sm');
