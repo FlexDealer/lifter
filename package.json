@@ -1,0 +1,30 @@
+{
+  "name": "lifter",
+  "version": "1.0.0",
+  "description": "Simple popup library with no dependancies",
+  "main": "src/lifter.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noolan/lifter.git"
+  },
+  "keywords": [
+    "javascript",
+    "popup",
+    "modal"
+  ],
+  "author": "Nolan Neustaeter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noolan/lifter/issues"
+  },
+  "homepage": "https://github.com/noolan/lifter#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
