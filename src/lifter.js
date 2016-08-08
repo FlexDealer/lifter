@@ -83,9 +83,9 @@ class Lifter {
 				}
 
 				if (trigger.getAttribute('data-size')) {
-					let size = trigger.getAttribute('data-size').split('x');
-					lifter.style.width = size[0] + 'px';
-					lifter.style.height = size[1] + 'px';
+					let size = trigger.getAttribute('data-size').split('|');
+					lifter.style.width = size[0];
+					lifter.style.height = size[1];
 				}
 
 				// content of popup
