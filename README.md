@@ -4,11 +4,11 @@ Simple popup library with no dependancies
 ## Implementation
 **CSS**
 ```html
-<link rel="stylesheet" href="/lifter/lifter.css" />
+<link rel="stylesheet" href="/lifter/dist/lifter.min.css" />
 ```  
 **JavaScript**
 ```html
-<script src="/lifter/lifter.js"></script>
+<script src="/lifter/dist/lifter.min.js"></script>
 ```
 
 
