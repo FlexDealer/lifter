@@ -172,3 +172,11 @@ Here are the selectors to use in your CSS if you want to customize the look of p
 ```
 
 _Note:_ `.lifter` transitions all applicable differences in styling between the `.lifter` and `lifter.lifted` selectors by default but this can be overridden if desired through CSS. ( `transition: opacity 150ms ease;` )
+
+
+## To Do
+
+- [ ] make an example page/site
+- [ ] write tests
+- [ ] add more pre-set animation styles
+- [ ] make docs prettier
