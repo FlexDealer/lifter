@@ -1,5 +1,5 @@
 # Lifter
-Simple popup library with no dependencies  
+Simple but flexible popup library with no dependencies  
 
 ## Implementation
 **CSS**
@@ -47,7 +47,6 @@ var lifter = new Lifter({
 ## Options
 ```javascript
 var lifter = new Lifter({
-	base : '.container-fluid',
 	triggers : '.popup',
 	preload : true
 });
@@ -56,7 +55,6 @@ var lifter = new Lifter({
 
 | Option | Type   | Default | Description |
 |--------|--------|---------|-------------|
-| **base** | string | `'body'` | Selector for the parent element.  All popup triggers must be children of this element. This is also the element that is darkened while a popup is open. |
 | **triggers** | string | `'[target=_popup]'` | Selector for the triggers that open popups. |
 | **preload** | boolean or string | `true` | Whether to load the popup content in hidden `<iframes>`. If a string selector is given then only triggers that match the selector will be preloaded. |
 
@@ -96,3 +94,81 @@ You can use any CSS size unit (`px`, `%`, `em`, `vw` ...) in the value of the at
 | width and height | `data-size` | `{width}{unit}|{height}{unit}` | `data-size="75%|450px"` |
 
 _Note:_ `data-size` will overwrite `data-width` or `data-height` if both are set on a trigger element.
+
+
+
+## Methods
+
+Under normal use you should not need these methods but here they are just in case you are doing something fancy:
+
+
+#### lift()
+
+Opens a popup.
+
+`lift(options)`
+
+
+| Parameter | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `options` | yes | `object` | Object containing configuration options for the popup. |
+| `options.target` | no | `string` | Selector that points to a popup that has been preloaded. |
+| `options.html` | no | `string` | Markup that will be shown in the popup if using inline content. |
+| `options.src` | no | `string` | URL to load in the popup. |
+| `options.classes` | no | `array` | List of classes that will be added to the popup |
+| `option.styles` | no | `object` | Key/values that represent styles and their values to be applied to the popup. Styles can be written as standard CSS styles (with hyphens) or as camel case. |
+|  |   |   |   |
+| `return` | - | `element` or `boolean` | If `target`, `html` and `src` are all `null` then `false` will be returned and no popup will be shown, otherwise, the popup element will be returned |
+
+**Example**
+```javascript
+var lifter = new Lifter();
+
+lifter.lift({
+	src : '//domain.com/page.html',
+    classes : [ 'lifter-sm', 'another-class'],
+    styles : { max-width : 100%; max-height: 100%; }
+});
+```
+
+
+#### lower()
+`lower()`
+
+Closes the open popup.
+
+
+## Styling
+
+Here are the selectors to use in your CSS if you want to customize the look of popups and the overlay behind it:
+
+#### Overlay:
+| Selector | State |
+|----------|:-----:|
+| `.lifter-base::after` | - |
+| `.lifter-base.lifting::after` | popup active |
+
+**Example**
+```css
+.lifter-base::after {
+	background-color: #fff;
+}
+```
+
+#### Popup:
+| Selector | State |
+|----------|:-----:|
+| `.lifter` | - |
+| `.lifter.lifting` | popup active |
+
+**Example**
+```css
+.lifter {
+	border-radius: 10000px;
+}
+.lifter.lifted {
+	border-radius: 0;
+}
+```
+
+_Note:_ `.lifter` transitions all applicable differences in styling between the `.lifter` and `lifter.lifted` selectors by default but this can be overridden if desired through CSS. ( `transition: opacity 150ms ease;` )
