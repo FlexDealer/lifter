@@ -10,6 +10,11 @@
 .lifter-base {
 	position: relative;
 }
+.lifter-base.lifting {
+	pointer-events: none;
+	max-height: 100vh;
+	overflow: hidden;
+}
 
 .lifter-base::after {
 	position: fixed;
