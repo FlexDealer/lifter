@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lifter by noolan</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Lifter</h1>
+        <p>Simple popup library with no dependancies</p>
+
+        <p class="view"><a href="https://github.com/noolan/lifter">View the Project on GitHub <small>noolan/lifter</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/noolan/lifter/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/noolan/lifter/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/noolan/lifter">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="lifter" class="anchor" href="#lifter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lifter</h1>
+
+<p>Simple but flexible popup library with no dependencies  </p>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
+
+<h2>
+<a id="implementation" class="anchor" href="#implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementation</h2>
+
+<p><strong>CSS</strong></p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>/lifter/dist/lifter.min.css<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+<p><strong>JavaScript</strong></p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/lifter/dist/lifter.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p><strong>Basic</strong></p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>//domain.com/page.html<span class="pl-pds">"</span></span> <span class="pl-e">target</span>=<span class="pl-s"><span class="pl-pds">"</span>_popup<span class="pl-pds">"</span></span>&gt;Pop this up&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> lifter <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Lifter</span>();</pre></div>
+
+<p><strong>Inline Content</strong></p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>popup-content<span class="pl-pds">"</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">"</span>display:none;<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">form</span> <span class="pl-e">action</span>=<span class="pl-s"><span class="pl-pds">"</span>/submit<span class="pl-pds">"</span></span> <span class="pl-e">method</span>=<span class="pl-s"><span class="pl-pds">"</span>POST<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>Email address<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">br</span> /&gt;
+        &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>Password<span class="pl-pds">"</span></span> /&gt;&lt;<span class="pl-ent">br</span> /&gt;
+        &lt;<span class="pl-ent">button</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>submit<span class="pl-pds">"</span></span>&gt;Log In&lt;/<span class="pl-ent">button</span>&gt;
+    &lt;/<span class="pl-ent">form</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">a</span> <span class="pl-e">target</span>=<span class="pl-s"><span class="pl-pds">"</span>_popup<span class="pl-pds">"</span></span> <span class="pl-e">data-content</span>=<span class="pl-s"><span class="pl-pds">"</span>#popup-content<span class="pl-pds">"</span></span>&gt;Log In&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> lifter <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Lifter</span>({
+    preload <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>:not([data-content])<span class="pl-pds">'</span></span>
+});</pre></div>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> lifter <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Lifter</span>({
+    triggers <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.popup<span class="pl-pds">'</span></span>,
+    preload <span class="pl-k">:</span> <span class="pl-c1">true</span>
+});</pre></div>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>triggers</strong></td>
+<td>string</td>
+<td><code>'[target=_popup]'</code></td>
+<td>Selector for the triggers that open popups.</td>
+</tr>
+<tr>
+<td><strong>preload</strong></td>
+<td>boolean or string</td>
+<td><code>true</code></td>
+<td>Whether to load the popup content in hidden <code>&lt;iframes&gt;</code>. If a string selector is given then only triggers that match the selector will be preloaded.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="popup-sizing" class="anchor" href="#popup-sizing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Popup Sizing</h2>
+
+<p>The default size of the popup is 50% of the total width and height of the base element.
+This can be changed per popup in a two different ways.</p>
+
+<p><strong>Setting popup size with classes</strong></p>
+
+<p>To use a small or large variant of the popup you can add a class to the trigger.
+| Size | Class | Effect |
+|------|-------|--------|
+| small | <code>lifter-sm</code> | width and height set to <code>30%</code> |
+| large | <code>lifter-lg</code> | width and height set to <code>80%</code> |</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>//domain.com/page.html<span class="pl-pds">"</span></span> <span class="pl-e">target</span>=<span class="pl-s"><span class="pl-pds">"</span>_popup<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>lifter-lg<span class="pl-pds">"</span></span>&gt;Pop this up huge&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+
+<p><strong>Setting popup size with data attributes</strong></p>
+
+<p>To have more control over the size of your popup you can use one of these data attributes:</p>
+
+<p><code>data-width</code> <code>data-height</code> <code>data-size</code></p>
+
+<p>You can use any CSS size unit (<code>px</code>, <code>%</code>, <code>em</code>, <code>vw</code> ...) in the value of the attribute.</p>
+
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Attribute</th>
+<th>Value Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td><code>data-width</code></td>
+<td><code>{width}{unit}</code></td>
+<td><code>data-width="500px"</code></td>
+</tr>
+<tr>
+<td>height</td>
+<td><code>data-height</code></td>
+<td><code>{height}{unit}</code></td>
+<td><code>data-height="40vh"</code></td>
+</tr>
+<tr>
+<td>width and height</td>
+<td><code>data-size</code></td>
+<td><code>{width}{unit}|{height}{unit}</code></td>
+<td><code>data-size="75%|450px"</code></td>
+</tr>
+</tbody>
+</table>
+
+<p><em>Note:</em> <code>data-size</code> will overwrite <code>data-width</code> or <code>data-height</code> if both are set on a trigger element.</p>
+
+<h2>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h2>
+
+<p>Under normal use you should not need these methods but here they are just in case you are doing something fancy:</p>
+
+<h4>
+<a id="lift" class="anchor" href="#lift" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>lift()</h4>
+
+<p>Opens a popup.</p>
+
+<p><code>lift(options)</code></p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>options</code></td>
+<td>yes</td>
+<td><code>object</code></td>
+<td>Object containing configuration options for the popup.</td>
+</tr>
+<tr>
+<td><code>options.target</code></td>
+<td>no</td>
+<td><code>string</code></td>
+<td>Selector that points to a popup that has been preloaded.</td>
+</tr>
+<tr>
+<td><code>options.html</code></td>
+<td>no</td>
+<td><code>string</code></td>
+<td>Markup that will be shown in the popup if using inline content.</td>
+</tr>
+<tr>
+<td><code>options.src</code></td>
+<td>no</td>
+<td><code>string</code></td>
+<td>URL to load in the popup.</td>
+</tr>
+<tr>
+<td><code>options.classes</code></td>
+<td>no</td>
+<td><code>array</code></td>
+<td>List of classes that will be added to the popup</td>
+</tr>
+<tr>
+<td><code>option.styles</code></td>
+<td>no</td>
+<td><code>object</code></td>
+<td>Key/values that represent styles and their values to be applied to the popup. Styles can be written as standard CSS styles (with hyphens) or as camel case.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>return</code></td>
+<td>-</td>
+<td>
+<code>element</code> or <code>boolean</code>
+</td>
+<td>If <code>target</code>, <code>html</code> and <code>src</code> are all <code>null</code> then <code>false</code> will be returned and no popup will be shown, otherwise, the popup element will be returned</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> lifter <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Lifter</span>();
+
+<span class="pl-smi">lifter</span>.<span class="pl-en">lift</span>({
+    src <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>//domain.com/page.html<span class="pl-pds">'</span></span>,
+    classes <span class="pl-k">:</span> [ <span class="pl-s"><span class="pl-pds">'</span>lifter-sm<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>another-class<span class="pl-pds">'</span></span>],
+    styles <span class="pl-k">:</span> { max<span class="pl-k">-</span>width <span class="pl-k">:</span> <span class="pl-c1">100</span><span class="pl-k">%</span>; max<span class="pl-k">-</span>height<span class="pl-k">:</span> <span class="pl-c1">100</span><span class="pl-k">%</span>; }
+});</pre></div>
+
+<h4>
+<a id="lower" class="anchor" href="#lower" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>lower()</h4>
+
+<p><code>lower()</code></p>
+
+<p>Closes the open popup.</p>
+
+<h2>
+<a id="styling" class="anchor" href="#styling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Styling</h2>
+
+<p>Here are the selectors to use in your CSS if you want to customize the look of popups and the overlay behind it:</p>
+
+<h4>
+<a id="overlay" class="anchor" href="#overlay" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overlay:</h4>
+
+<table>
+<thead>
+<tr>
+<th>Selector</th>
+<th align="center">State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.lifter-base::after</code></td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td><code>.lifter-base.lifting::after</code></td>
+<td align="center">popup active</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.lifter-base</span><span class="pl-e">::after</span> {
+    <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">#fff</span>;
+}</pre></div>
+
+<h4>
+<a id="popup" class="anchor" href="#popup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Popup:</h4>
+
+<table>
+<thead>
+<tr>
+<th>Selector</th>
+<th align="center">State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.lifter</code></td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td><code>.lifter.lifting</code></td>
+<td align="center">popup active</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.lifter</span> {
+    <span class="pl-c1"><span class="pl-c1">border-radius</span></span>: <span class="pl-c1">10000<span class="pl-k">px</span></span>;
+}
+<span class="pl-e">.lifter.lifted</span> {
+    <span class="pl-c1"><span class="pl-c1">border-radius</span></span>: <span class="pl-c1">0</span>;
+}</pre></div>
+
+<p><em>Note:</em> <code>.lifter</code> transitions all applicable differences in styling between the <code>.lifter</code> and <code>lifter.lifted</code> selectors by default but this can be overridden if desired through CSS. ( <code>transition: opacity 150ms ease;</code> )</p>
+
+<h2>
+<a id="to-do" class="anchor" href="#to-do" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To Do</h2>
+
+<ul>
+<li>[ ] make an example page/site</li>
+<li>[ ] write tests</li>
+<li>[ ] add more pre-set animation styles</li>
+<li>[ ] make docs prettier</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/noolan">noolan</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
