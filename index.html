@@ -42,8 +42,10 @@
 	Demo
 </h2>
 
+<p>
 <a href="https://www.reddit.com/r/webdev" target="_popup">/r/webdev (no autoload)</a><br>
-<a href="https://www.reddit.com/r/webdev" target="_popup">/r/webdev (autoload)</a>
+<a href="https://www.reddit.com/r/webdev" class="lifter-autoload" target="_popup">/r/webdev (autoload)</a>
+</p>
 
 <h2>
 <a id="implementation" class="anchor" href="#implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementation</h2>
@@ -346,5 +348,8 @@ This can be changed per popup in a two different ways.</p>
     </div>
     <script src="javascripts/scale.fix.js"></script>
     <script src="javascripts/lifter.min.js"></script>
+	<script>
+		var lifter = new Lifter({ autoloads: '.lifter-autoload' });
+	</script>
   </body>
 </html>
