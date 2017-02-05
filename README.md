@@ -68,6 +68,7 @@ This can be changed per popup in a two different ways.
 **Setting popup size with classes**
 
 To use a small or large variant of the popup you can add a class to the trigger.
+
 | Size | Class | Effect |
 |------|-------|--------|
 | small | `lifter-sm` | width and height set to `30%` |
